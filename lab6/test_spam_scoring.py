@@ -62,3 +62,5 @@ def test_healthy_inbox_status():
     counts = {"spam": 1, "suspicious": 3, "clean": 6}
     assert inbox_status(counts) == "healthy"
 
+def test_known_sender_with_positive_score():
+    assert score_message("free winner prize", True, 0) == 3
